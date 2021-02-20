@@ -46,10 +46,10 @@ function App() {
                     <img src={`./player-images/${player.Id}.jpg`} className="card-img-top" alt="player.jpg"/>
                     <div className="card-body">
                       <h5 className="card-title">{player.PFName}</h5>
-                      <p className="card-text">Skill: {player.SkillDesc}</p>
-                      <p className="card-text">{`Player Value $ ${player.Value}`}</p>
-                      <p className="card-text">{`Upcoming Matches - ${player.CCode} vs ${player.UpComingMatchesList[0].VsCCode}`}</p>
-                      <p className="card-text">MDate: "{player.UpComingMatchesList[0].MDate}"</p>
+                      <p className="card-text"><span>Skill:</span> {player.SkillDesc}</p>
+                      <p className="card-text"> <span>Player Value: </span>${player.Value}</p>
+                      <p className="card-text"><span>Upcoming Matches: </span> {player.UpComingMatchesList[0].CCode} vs {player.UpComingMatchesList[0].VsCCode}</p>
+                      <p className="card-text"><span>MDate:</span> "{player.UpComingMatchesList[0].MDate}"</p>
                     </div>
                   </div>
                 </div>
