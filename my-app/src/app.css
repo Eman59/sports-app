@@ -14,8 +14,15 @@ body{
 
 .container p{
     margin-top: -10px;
+    font-size: 15px
+}
+
+.container p span{
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .container h5{
     color: rgba(40, 40, 167, 0.651);
+    padding-bottom: 7px;
 }
