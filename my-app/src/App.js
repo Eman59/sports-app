@@ -4,7 +4,7 @@ import "./app.css"
 
 function App() {
   const [players, setPlayers] = useState([]);
-  // const [upMatches, setUpMatches] = useState([]);
+
   const[search, setSearch] = useState('');
 
   useEffect(() => {
@@ -14,10 +14,10 @@ function App() {
       );
       console.log(res.data.playerList)
       setPlayers(res.data.playerList);
-      // setUpMatches(res.UpComingMatchesList)
+
     }
     getData();
-  });
+  },[]);
 
   const filteredPlayers = players.filter( player => {
     return player.PFName.toLowerCase().includes(search.toLowerCase())
