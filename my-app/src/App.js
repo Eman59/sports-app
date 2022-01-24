@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-md-12">
           <div className="form-group">
             <input className="form-control" type="text" placeholder="Search Player...."  onChange={ e => setSearch(e.target.value)}/>
@@ -32,21 +32,19 @@ function App() {
       </div>
       <div className="row">
         {
-          filteredPlayers.map((player) => {
+          filteredPlayers.sort((a,b) => a.name > b.name ? 1: -1).map((player) => {
             return (
-              <>
-                <div className="col-md-3" key={player.id}>
-                  <div className="card mb-3">
-                    <img src={player.photos} className="card-img-top" alt="player.jpg"/>
-                    <div className="card-body">
-                      <h5 className="card-title">{player.name}</h5>
-                      <p><span>Age: </span>{player.age}</p>
-                      <p className="card-text"><span>Birth:</span> {player.birth}</p>
-                      <p className="card-text"> <span>Player Value: </span>€{player.value}</p>
-                    </div>
+              <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={player.id}>
+                <div className="card mb-3">
+                  <img src={player.photos} className="card-img-top" alt="player.jpg"/>
+                  <div className="card-body">
+                    <h5 className="card-title">{player.name}</h5>
+                    <p><span>Age: </span>{player.age}</p>
+                    <p className="card-text"><span>Birth:</span> {player.birth}</p>
+                    <p className="card-text"><span>Player Value: </span>€{player.value}</p>
                   </div>
                 </div>
-              </>
+              </div>
             )
           })
         }
